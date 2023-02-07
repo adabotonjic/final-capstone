@@ -1,0 +1,70 @@
+
+:root{
+    /*Colors*/
+    --yellow: #F4CE14;
+    --green: #495E57;
+    --red: #EE9972;
+    --beige: #FBDABB;
+    --light-grey: #EDEFEE;
+    --dark-grey:#333333;
+
+    /*Font-size*/
+    --fsz-p:16pt;
+    --fsz-h1: 64pt;
+    --fsz-h2: 40pt;
+    --fsz-h3:;
+    --fsz-h4:;
+    --fsz-h5:;
+    --fsz-h6:;
+    --fsz-cta:18pt;
+    --fsz-sec-title: 20pt;
+    -fsz-specials: 16pt;
+
+    /*FOnt-weight*/
+    --fw-regular:400;
+    --fw-medium:500;
+    --fw-bold:700;
+
+    /*Line height*/
+    --lh-regular:16pt;
+
+    /*text trasnform*/
+    --text-uppercase: uppercase;
+}
+
+/*Typography*/
+body {
+    margin: 0;
+    font-family: "Karla", "Open Sans", sans-serif;  
+    font-size: var(--fsz-p);
+    line-height:var(--lh-regular);
+    font-weight: var(--fw-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2{
+    font-family: "Markazi Text", "Open Sans", serif; 
+    
+}
+h1{
+    font-weight: var(--fw-medium);
+    font-size:var(--fsz-h1);
+}
+h1{
+    font-weight: var(--fw-regular);
+    font-size:var(--fsz-h2);
+}
+h3, .h3, h4, h5, h6{
+    font-weight: var(--fw-medium);
+    font-size: var(--fsz-cta);
+}
+.card {
+    font-size: var(--fsz-cta);
+    font-weight: var(--fw-bold);
+}
+
+/*Header*/
+nav ul{
+    list-style: none;;
+}

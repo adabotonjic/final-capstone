@@ -1,9 +1,10 @@
+import React from 'react';
 import footerlogo from './Footer-logo.png';
 function Footer() {
     return (
       <>
 
-      <footer className='wrapper-footer'>
+      <footer className='wrapper-footer' aria-label='footer'>
       <div className='container'>
         <div className='row'>
           <div className='content-wrapper w-100'>

@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './Logo.svg';
 import basket from './Basket.svg'
 
@@ -9,9 +10,9 @@ function Nav() {
       <div className='container'>
         <div className='row'>
 
-        <nav>
+        <nav aria-label="primary">
           <div className="d-lg-none" id="mobile-menu">
-            <button className="nav-btn">
+            <button className="nav-btn" aria-label="mobile-menu">
               <input type="checkbox" id="overlay-input" />
               <label htmlFor="overlay-input" id="overlay-button"><span></span></label>
               <div id="overlay">

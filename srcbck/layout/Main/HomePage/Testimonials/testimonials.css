@@ -1,0 +1,44 @@
+#wrapper-testimonials{
+    background: var(--light-grey);
+    padding: 4rem 0;
+}
+#wrapper-testimonials .h1{
+    color: black;
+    margin-block-end:0;
+    text-align:center;
+}
+#wrapper-testimonials .content{
+    margin-top:3rem;
+    flex-wrap:wrap;
+}
+#wrapper-testimonials .single-reviewer{
+    padding-right:1rem;
+    margin-bottom:3rem;
+    width: 100%;
+}
+#wrapper-testimonials .ratings{
+    margin-bottom:1rem;
+
+}
+#wrapper-testimonials .persone-holder img{
+    border-radius: 50%;
+    margin-right:1rem;
+    margin-bottom:0.5rem;
+}
+#wrapper-testimonials .persone-holder p{
+    font-weight:500;
+}
+
+@media screen and (min-width:400px){
+    #wrapper-testimonials .single-reviewer{
+        width: 50%;
+    }
+}
+@media screen and (min-width:768px){
+    #wrapper-testimonials .content{
+        flex-wrap:nowrap;
+    }
+    #wrapper-testimonials .single-reviewer{
+        width: auto;
+    }
+}
