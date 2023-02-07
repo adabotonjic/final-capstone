@@ -1,0 +1,13 @@
+#wrapper-booking{
+    padding-block:2rem
+}
+form {
+    display: grid;
+    max-width: 250px;
+    gap: 10px;
+}
+input, select, button[type=submit]{
+    height:40px;
+    padding: 0 5px;
+    margin-bottom:1rem;
+}

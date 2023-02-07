@@ -1,11 +1,13 @@
 import React from 'react';
 import './BookingForm.css';
 import { useState, useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-function BookingForm({updateForm, onSubmit }) {
+function BookingForm({updateForm}) {
 
-
+  const navigate = useNavigate();
+  
     const initializeTimes = {
       0: '--',
       1: '16:00',
@@ -26,7 +28,7 @@ function BookingForm({updateForm, onSubmit }) {
           const stateArray = Object.values(state);
          
           if(`${state[property]}` === action.value){
-            const x = stateArray.splice(`${property}`, 1);
+            //const x = stateArray.splice(`${property}`, 1);
             /*console.log('qui3')
             console.log(stateArray);*/
             //console.log(x);
@@ -50,42 +52,34 @@ function BookingForm({updateForm, onSubmit }) {
   
   
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-   /* console.log('Booking form availableTimes');
-    console.log(availableTimes);*/
+
     
     const [form, setForm] = useState({
         date: 'dd/mm/yyyy',
         time:'',
         nrguest:'1',
         occasion: '',
+        sent: false,
 
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        navigate('/confirmed-booking', {replace: true});
         updateForm(form);
-        onSubmit();
-    
+
         setForm({
             date:'',
             time:'',
             nrguest:'',
             occasion: '',
+            sent: false,
 
         })
-        
+
         dispatch({
           type:'time',
           value: form.time});
-
- 
-
-        //  console.log(form.time);
-
-
-
-
       };
     return (
       <>
@@ -104,7 +98,7 @@ function BookingForm({updateForm, onSubmit }) {
                 date: (e.target.value)
             });
             }}/>
-            {form.date}
+           
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" 
             value={form.time}  
@@ -119,7 +113,7 @@ function BookingForm({updateForm, onSubmit }) {
                 <option key={index}>{availableTimes[time]}</option>
                 )}
             </select>
-            {form.time}
+            
             <label htmlFor="guests">Number of guests</label>
             <input 
             type="number" 
@@ -134,7 +128,7 @@ function BookingForm({updateForm, onSubmit }) {
                 nrguest: (e.target.value)
             });
             }} />
-            {form.nrguest}
+            
             <label htmlFor="occasion">Occasion</label>
             <select id="occasion" value={form.occasion} onChange={e => {
                 setForm({
@@ -146,8 +140,13 @@ function BookingForm({updateForm, onSubmit }) {
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            {form.occasion}
-            <button  type="submit" aria-label="Make your reservation" disabled={!form.date}>Make Your reservation</button>
+            
+            <button  type="submit" aria-label="Make your reservation" onClick={() => {
+                setForm({
+                ...form,
+                sent: true
+            });
+            }}  disabled={!form.date}>Make Your reservation</button>
         </form>
     </div>
 </div>
